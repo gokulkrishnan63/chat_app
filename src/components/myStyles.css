@@ -5,14 +5,53 @@
     width: 90vw;
     border-radius: 20px;
 }
-
+/* sidebar container */
 .sidebar-container{
-    border: 5px solid red;
     flex:0.3;
+    display: flex;
+    flex-direction: column;
 }
 
+.sb-header{
+  background-color: white;
+  border-radius: 20px;
+  padding:10px 5px;
+  margin:5px;
+  display: flex;
+  justify-content: space-around;
+}
+.sb-search{
+  background-color: white;
+  border-radius: 20px;
+  padding:5px 10px;
+  margin:10px;
+  display: flex;
+  align-items: center;
+
+}
+.search_box{
+  outline-width:0 ;
+  border: none;
+  font-size:1.5rem;
+  margin-left:10px ;
+
+}
+
+
+.sb-conversations{
+
+  background-color: white;;
+  border-radius:20px;
+  padding:5px 10px;
+  margin: 10px;
+  flex:1;
+}
+
+/* ------------------------------------ */
 .workArea-container{
-  border: 5px solid blue;
+  background-color: aliceblue;
   flex:0.7;
 }
+
+
 
