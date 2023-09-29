@@ -8,6 +8,7 @@ import NightlightIcon from "@mui/icons-material/Nightlight";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@mui/material";
 import Conversations from "./conversations";
+// import ChatArea from "./ChatArea";
 
 function Sidebar() {
   const [conversations] = useState([
@@ -47,7 +48,8 @@ function Sidebar() {
       <div className="sb-conversations">
         {conversations.map((conversation,index) => (
           <div key={index}>
-           <Conversations props={conversation} />;
+           <Conversations props={conversation} />
+           {/* <ChatArea/> */}
 
           </div>
         ))}

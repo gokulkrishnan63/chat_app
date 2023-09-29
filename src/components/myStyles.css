@@ -112,20 +112,51 @@
 .chatArea-container{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex:0.7;
+
 }
+
 
 .chatArea-header{
-  background-color: orange;
+
+  display: flex;
+  align-items: center;
+  gap:10px;
+  background-color: white;
+  padding: 10px 10px;
+  margin:10px;
+  border-radius: 20px;
 }
 
-.messages-container{
-  background-color: aquamarine;
+.header-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex:1;
+}
+.messages-container{
+  flex:1;
+  background-color: white;
+  padding:10px 10px;
+  margin:10px;
+  border-radius: 20px;
 }
 
 .text-input-area{
-  background-color: yellow;
+  background-color: white;
+  padding: 10px 10px;
+  margin:10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  
 }
 
+.search-box{
+  outline-width: 0;
+  border:none;
+  margin-left:10px;
+  font-size: 1.25rem;
+  color:rgba(0,0,0,0.54)
+}
 /* ------- */
