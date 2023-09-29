@@ -90,7 +90,8 @@
   grid-area:1/2/2/4;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
-  color:rgba(0,0,0,0.54)
+  color:rgba(0,0,0,0.54);
+  padding-left:10px;
 }
 
 .con-timeStamp{
@@ -102,7 +103,7 @@
 .con-lastMessage{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size:0.75rem;
-
+ padding:10px;
 }
 /* -------------------- */
 
@@ -140,7 +141,15 @@
   padding:10px 10px;
   margin:10px;
   border-radius: 20px;
+  /* overflow-y: auto; */
 }
+
+/* .messages-container::-webkit-scrollbar{
+  width: 0.5em;
+} */
+/* .messages-container::-webkit-scrollbar-thumb{
+  background-color: transparent;
+} */
 
 .text-input-area{
   background-color: white;
@@ -160,3 +169,124 @@
   color:rgba(0,0,0,0.54)
 }
 /* ------- */
+
+
+/* messageOthers component*/
+
+.other-message-container{
+  background-color:#d9d9d9 ;
+
+}
+
+
+.other-text-content{
+  background-color: #d9d9d9;
+  padding:10px 10px;
+  margin:5px;
+  border-radius: 20px;
+  width:max-content;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------ */
+
+/*messageSelf component */
+
+.self-message-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.messageBox{
+  display: flex;
+  flex-direction: column;
+  background-color: #63d7b0;
+  width:max-content;
+  padding:10px 10px;
+  margin:5px;
+  border-radius: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.self-timeStamp{
+align-self: flex-end;
+font-size: 0.75rem;
+font-weight: lighter;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* welcome Component */
+
+.welcome-logo{
+  height: 20vw;
+
+}
+
+.welcome-container{
+  flex:0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(0,0,0,0.54);
+  border-bottom: 5px solid #63d7b0;
+  border-radius:20px;
+}
+/* ------- */
+
+/* createGroups container */
+
+.createGroups-container{
+  flex:0.7;
+  padding:20px 10px;
+  align-self: center;
+  background-color: white;
+  border-radius:20px;
+  margin:10px;
+  justify-content: space-between;
+  display: flex;
+}
+/* ------ */
+
+/* Login container */
+.login-container{
+
+  height: 90vh;
+  width:90vw;
+  background-color: #f4f5f8;
+  border-radius: 20px;
+  display: flex;
+  box-shadow: rgba(100,100,111,0.2)0px 7px 29px 0px;
+}
+
+.image-container{
+  flex:0.3;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+}
+
+.login-box{
+  flex:0.7;
+  background-color: white;
+  border-radius: 20px;
+  margin:10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#63d7b0;
+  font-weight: bolder;
+  display: flex;
+  justify-content:center ;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+}
+.login-text{
+  font-size: 2vw;
+  padding-bottom:20px;
+}
+/* ------ */
