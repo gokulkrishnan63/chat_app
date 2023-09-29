@@ -6,6 +6,7 @@ import MessageOthers from "./MessageOthers";
 import MessageSelf from "./MessageSelf";
 import "./myStyles.css";
 
+// props fetch from main component
 const ChatArea = ({ props }) => {
   return (
     <div className="chatArea-container">
@@ -19,15 +20,10 @@ const ChatArea = ({ props }) => {
           <DeleteIcon />
         </IconButton>
       </div>
-      {/* <div classNAme="messages-container"> */}
-
-      {/* </div> */}
 
       <div className="messages-container">
         <MessageOthers />
         <MessageSelf />
-
-
       </div>
       <div className="text-input-area">
         <input

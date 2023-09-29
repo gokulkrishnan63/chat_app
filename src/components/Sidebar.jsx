@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// material icon react
+// material icon react ==========================================
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
@@ -7,8 +7,10 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@mui/material";
+// =========================================================
+
 import Conversations from "./conversations";
-// import ChatArea from "./ChatArea";
+
 
 function Sidebar() {
   const [conversations] = useState([
@@ -46,11 +48,10 @@ function Sidebar() {
         <input type="text" placeholder="search" className="search_box" />
       </div>
       <div className="sb-conversations">
-        {conversations.map((conversation,index) => (
+        {conversations.map((conversation, index) => (
           <div key={index}>
-           <Conversations props={conversation} />
-           {/* <ChatArea/> */}
-
+            <Conversations props={conversation} />
+            {/* <ChatArea/> */}
           </div>
         ))}
       </div>
