@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 // this props fetch from chatArea component
 const Conversations = ({ props }) => {
   const navigate = useNavigate();
+
+  // this component is looping component
   return (
     <>
-    
     <div
       className="conversation-container"
       onClick={() => {
