@@ -10,7 +10,9 @@ import { IconButton } from "@mui/material";
 // =========================================================
 
 import Conversations from "./conversations";
-
+// useNavigate hooks it invoked from react-router-dom;
+import { useNavigate } from "react-router-dom";
+// import ChatArea from "./ChatArea";
 
 function Sidebar() {
   const [conversations] = useState([
@@ -18,7 +20,10 @@ function Sidebar() {
     { name: "Test#2", lastMessage: "Last Message #2", timeStamp: "today" },
     { name: "Test#3", lastMessage: "Last Message #3", timeStamp: "today" },
   ]);
+
+  const navigate = useNavigate();
   return (
+    <>
     <div className="sidebar-container">
       <div className="sb-header">
         <div>
@@ -27,13 +32,25 @@ function Sidebar() {
           </IconButton>
         </div>
         <div>
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigate("users");
+            }}
+          >
             <PersonAddIcon />
           </IconButton>
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigate("groups");
+            }}
+          >
             <GroupAddIcon />
           </IconButton>
-          <IconButton>
+          <IconButton
+            onClick={() => {
+              navigate("create-groups");
+            }}
+          >
             <AddCircleIcon />
           </IconButton>
           <IconButton>
@@ -50,12 +67,16 @@ function Sidebar() {
       <div className="sb-conversations">
         {conversations.map((conversation, index) => (
           <div key={index}>
-            <Conversations props={conversation} />
+            <Conversations
+              props={conversation}
+            
+            />
             {/* <ChatArea/> */}
           </div>
         ))}
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,9 +1,10 @@
 import React from "react";
 import logo from "../New folder/OIP.jpg";
-import { Button, TextField } from "@mui/material";
+import {  Button, TextField } from "@mui/material";
 
 const Login = function () {
   return (
+    <>
     <div className="login-container">
       <div className="image-container">
         <img src={logo} alt="logo" className="welcome-logo" />
@@ -24,6 +25,7 @@ const Login = function () {
         <Button variant="outline">Login</Button>
       </div>
     </div>
+    </>
   );
 };
 
