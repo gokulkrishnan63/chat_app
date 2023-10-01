@@ -18,7 +18,7 @@ const UserGroups = function () {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <input placeholder="Search" className="search-box" />
+        <input input="text" placeholder="Search" className="search-box" />
       </div>
       <div className="ug-list">
         <div className="list-tem">
