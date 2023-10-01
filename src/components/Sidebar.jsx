@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 // material icon react ==========================================
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -14,7 +14,7 @@ import Conversations from "./conversations";
 // useNavigate hooks it invoked from react-router-dom;
 import { useNavigate } from "react-router-dom";
 // useSelectorhook invoked from the react-redux;
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 // import from theme slice
 
@@ -23,12 +23,13 @@ function Sidebar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const lightTheme = useSelector((state) => state.themeKey);
- useEffect(()=>{},[])
+  useEffect(() => {}, []);
   const [conversations] = useState([
     { name: "Best#1", lastMessage: "Last Message #1", timeStamp: "today" },
     { name: "Test#2", lastMessage: "Last Message #2", timeStamp: "today" },
     { name: "Test#3", lastMessage: "Last Message #3", timeStamp: "today" },
   ]);
+  // const[lightTheme,setTheme]=useState(true);  ==> instead of this used redux to render color all over the component.
   return (
     <>
       <div className="sidebar-container">
@@ -72,8 +73,9 @@ function Sidebar() {
               />
             </IconButton>
             <IconButton
+              // onClick(()=>{setTheme((previousValue)=>{return !previousValue})})  ==> useState()
               onClick={() => {
-              (dispatch(toggleTheme()))
+                dispatch(toggleTheme());
               }}
             >
               {lightTheme && (
