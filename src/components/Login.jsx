@@ -34,7 +34,8 @@ const Login = function () {
       );
       setLoginStatus({ msg: "success", key: Math.random() });
       setLoading(false);
-      localStorage.setItem("userData", JSON.stringify(response.data.token));
+      localStorage.setItem("userData", JSON.stringify(response.data));
+      console.log(response.data.token);
       navigate("/app/welcome");
     } catch (err) {
       setLoginStatus({
@@ -47,19 +48,19 @@ const Login = function () {
   const signUpHandler = async () => {
     setLoading(true);
     try {
-      const config = {
-        headers: { "Content-type": "application/json" },
-      };
-
       const response = await axios.post(
         "http://localhost:3990/user/register",
         data,
-        config
+        { headers: { "Content-Type": "application/json" } }
       );
       setSignStatus({ msg: "success", key: Math.random() });
+      if(response.status===201){
+        const data = response.data
+        localStorage.setItem("token", JSON.stringify(data));
       navigate("/app/welcome");
-      localStorage.setItem("userdata", JSON.stringify(response.data));
-      // console.log(response.data.token)
+
+
+      }
 
       setLoading(false);
     } catch (err) {
@@ -85,7 +86,7 @@ const Login = function () {
         console.error("Error:", err);
         // You can set a default error message or take other appropriate actions.
       }
-      
+
       setLoading(false);
     }
   };
@@ -124,9 +125,7 @@ const Login = function () {
               color="secondary"
               name="password"
             />
-            <Button variant="outlined" color="secondary" onClick={loginHandler}>
-              Login
-            </Button>
+          <Button onClick={loginHandler}></Button>
             <p>
               Don't have an Acconut?{" "}
               <Button
@@ -184,7 +183,10 @@ const Login = function () {
                 onClick={() => {
                   setShowLogin(true);
                 }}
-              > Login</Button>
+              >
+                {" "}
+                Login
+              </Button>
             </p>
           </div>
         )}
@@ -193,4 +195,4 @@ const Login = function () {
   );
 };
 
-export default Login
+export default Login;

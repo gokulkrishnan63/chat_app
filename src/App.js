@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* <MainComponents/> */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="app" element={<MainComponents />}>
