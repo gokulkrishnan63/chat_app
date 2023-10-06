@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// this props fetch from chatArea
+// this props fetch from chatArea component
 const Conversations = ({ props }) => {
   const navigate = useNavigate();
+
+  // this component is looping component
   return (
+    <>
     <div
       className="conversation-container"
       onClick={() => {
@@ -14,7 +17,11 @@ const Conversations = ({ props }) => {
       <p className="con-title">{props.name}</p>
       <p className="con-lastMessage">{props.lastMessage}</p>
       <p className="con-timeStamp">{props.timeStamp}</p>
+      
     </div>
+
+    </>
+    
   );
 };
 
