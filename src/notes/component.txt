@@ -1,0 +1,60 @@
+packages installed
+
+1.react-router-dom
+2.material icon in react
+
+
+----------------COMPONENTS---------------
+
+1.MainContainer component
+
+=>It was the main component to all over the component in  this react app.
+=>It has the router outlet to make the navigation and the things 
+=>Always it's going to render the sidebar component
+
+=>it has many child component so if we navigate to particular component of this child component 
+  we need to use (useNavigate) hook.
+
+2.ChatArea component
+
+=>It rendering the name who has messaging in chat at top of the packages.
+=>It has two component, one message from others <MessageOthers/> and two messaging going by self <MessageSelf/>.
+=> one input field and  send Button
+
+=> this path set inside the conversation component\
+
+3.conversation component
+
+=>It rendering for loop data that came from sidebar component through props.
+=> the data are name, lastmessage,timeStamp
+
+
+4.sidebar component
+
+=> It has buttons to navigate to other component
+=> useNavigate invoked from react-router-dom to navigate
+
+=> navigate("users")  it navigate to user_group component
+=> navigate("groups") it navigate to Groups component
+=>navigate("create-groups") it navigate to  CreateGroups component
+
+5.MessageOther component
+
+=> this component used to recive the message from others
+
+6.MessageSelf component
+
+=> this component used to send message from us
+
+
+
+
+
+
+
+
+
+
+
+
+

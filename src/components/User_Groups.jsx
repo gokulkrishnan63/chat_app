@@ -4,35 +4,45 @@ import SearchIcon from "@mui/icons-material/Search";
 import { IconButton } from "@mui/material";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import logo from "../New folder/OIP.jpg";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { AnimatePresence, motion } from "framer-motion";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Users() {
-  const userData = JSON.stringify(localStorage.getItem("userData"));
+  const token = JSON.parse(localStorage.getItem("token"));
 
   const lightTheme = useSelector((state) => state.themeKey);
   const [users, setUsers] = useState([]);
   const nav = useNavigate();
-  const dispatch = useDispatch();
-// const user = userData?.data;
+
+
   useEffect(() => {
-    // console.log(user)
-    const config = {
-      headers: {
-        Authorization: `Bearer ${userData.token}`,
-      },
+    if (!token) {
+      nav("/");
+      return;
+    }
+    const fetchUsers = async () => {
+      try {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+            "Content-Type": "application/json",
+          },
+        };
+        const response = await axios.get("http://localhost:3990/user/fetchUsers", config);
+  
+        if (response.status === 200) {
+          setUsers(response.data.users);
+        } else {
+        }
+      } catch (error) {
+        console.error("Error fetching users:", error.message);
+      }
     };
-    axios
-      .get("http://localhost:3990/user/fetchUsers", config)
-      .then((response) => {
-        setUsers(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching users:", error);
-      });
-  }, [userData, nav]);
+    fetchUsers();
+    
+  }, [token, nav]);
 
   return (
     <AnimatePresence>
@@ -73,23 +83,24 @@ function Users() {
           />
         </div>
         <div className="ug-list">
-          {/* {users.map((user, index) => (
+          {users.map((user, index) => (
             <motion.div
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               className={"list-tem" + (lightTheme ? "" : " dark")}
               key={index}
               onClick={() => {
-                console.log("Creating chat with ", user.name);
                 // You can add logic for handling user clicks here
               }}
             >
-              <p className={"con-icon" + (lightTheme ? "" : " dark")}>T</p>
+              <p className={"con-icon" + (lightTheme ? "" : " dark")}>
+                {user.name[0]}
+              </p>
               <p className={"con-title" + (lightTheme ? "" : " dark")}>
                 {user.name}
               </p>
             </motion.div>
-          ))} */}
+          ))}
         </div>
       </motion.div>
     </AnimatePresence>
